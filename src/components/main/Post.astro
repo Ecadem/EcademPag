@@ -1,0 +1,40 @@
+---
+const resp = await fetch("http://localhost:8000/recent_posts")
+const posts: any = await resp.json()
+
+import Post from "../shared/Post-cont.astro"
+
+
+export interface Props {
+    Titulo: String;
+    More: String;
+    LinkMore: String;
+
+}
+
+const { Titulo, More, LinkMore } = Astro.props;
+---
+
+<section>
+    <div class="flex text-center md:text-left my-3 md:my-5">
+        <h2 class="text-4xl font-bold">{ Titulo }</h2>
+    </div>
+    <div class="flex justify-between flex-col space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:auto-rows-max ">
+        {
+            posts.map( post => (
+                    <Post
+                        Title = { post.title }
+                        Last_update = { post.last_update }
+                        Resumen = { post.resumen }
+                        Image = { post.image }
+                        Url = { post.url }
+                    />
+            ))
+        }
+    </div>
+    <div class="flex justify-center py-5">
+        <a href={ LinkMore } class="text-[#BB5226] hover:text-[#D7754C] opacity-1 italic ">
+            { More }
+        </a>
+    </div>
+</section>

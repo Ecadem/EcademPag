@@ -1,0 +1,60 @@
+{
+    "projects": [
+        {
+            "title": "Project 1",
+            "resumen": "Esto es una publicacion de ejemplo para probar el componente del Post",
+            "image": "https://i.imgur.com/KFwgnMx.jpg",
+            "url": "#",
+            "urlgit": "#",
+            "tags": [
+                {
+                    "name": "python",
+                    "class": "flex justify-center text-xs font-bold p-1",
+                    "style": "background-color:#8F338B;border-radius: 9999px;color:#4F004B"
+                },
+                {
+                    "name": "Angular",
+                    "class": "flex justify-center text-xs font-bold p-1",
+                    "style": "background-color:#C14568;border-radius: 9999px;color:#6A001E"
+                }
+            ]
+        },
+        {
+            "title": "Project 2",
+            "resumen": "Esto es una publicacion de ejemplo para probar el componente del Post",
+            "image": "https://i.imgur.com/KFwgnMx.jpg",
+            "url": "#",
+            "tags": [
+                {
+                    "name": "python",
+                    "class": "flex justify-center text-xs font-bold p-1",
+                    "style": "background-color:#8F338B;border-radius: 9999px;color:#4F004B"
+                },
+                {
+                    "name": "Angular",
+                    "class": "flex justify-center text-xs font-bold p-1",
+                    "style": "background-color:#C14568;border-radius: 9999px;color:#6A001E"
+                }
+            ]
+        },
+        {
+            "title": "Project 3",
+            "resumen": "Esto es una publicacion de ejemplo para probar el componente del Post",
+            "image": "https://i.imgur.com/KFwgnMx.jpg",
+            "url": "#",
+            "tags": [
+                {
+                    "name": "python",
+                    "class": "flex justify-center text-xs font-bold p-1",
+                    "style": "background-color:#8F338B;border-radius: 9999px;color:#4F004B"
+                },
+                {
+                    "name": "Angular",
+                    "class": "flex justify-center text-xs font-bold p-1",
+                    "style": "background-color:#C14568;border-radius: 9999px;color:#6A001E"
+                }
+            ]
+        }  
+    ]
+    
+}    

@@ -1,0 +1,26 @@
+{
+    "posts": [
+        {
+            "title": "Post 1",
+            "last_update": "13-jun-2023",
+            "resumen": "Esto es una publicacion de ejemplo para probar el componente del Post",
+            "image": "https://i.imgur.com/KFwgnMx.jpg",
+            "url": "#"
+        },
+        {
+            "title": "Post 2",
+            "last_update": "13-jun-2023",
+            "resumen": "Esto es una publicacion de ejemplo para probar el componente del Post",
+            "image": "https://i.imgur.com/KFwgnMx.jpg",
+            "url": "#"
+        },
+        {
+            "title": "Post 3",
+            "last_update": "13-jun-2023",
+            "resumen": "Esto es una publicacion de ejemplo para probar el componente del Post",
+            "image": "https://i.imgur.com/KFwgnMx.jpg",
+            "url": "#"
+        }  
+    ]
+    
+}    

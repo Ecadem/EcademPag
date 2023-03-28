@@ -1,0 +1,54 @@
+---
+export interface Props {
+    Titulo: string;
+    Resumen: string;
+    Image: string;
+    Url: string;
+    Urlgit: string;
+    Tags: Array<{
+        name: string;
+        class: string;
+        style: string;
+    }>;
+}
+
+const { Titulo, Resumen, Image, Url, Urlgit, Tags } = Astro.props
+
+let tags = Tags
+
+---
+
+<div class="bg-[#4C1700] vpx-1 md:mx-2
+            hover:bg-[#762300] hover:duration-200
+            rounded-lg">
+    <div class="flex">
+        
+        <img src={ Image } alt="" class="hidden md:flex w-60"> 
+    
+        <div class="md:inline-block md:align-middle p-5">
+            <p class="text-3xl font-bold pb-2">
+                { Titulo }
+            </p>
+            <div class="flex space-x-1 mb-2">
+                { 
+                    tags.map( tag => (
+                        <>
+                        <span class = { tag.class } style = { tag.style }>
+                            { tag.name }
+                        </span>
+                        </>
+                    ))
+                }
+            </div>
+            <p>{ Resumen }</p>
+            <div class="flex justify-center md:justify-start space-x-4 md:space-x-2 my-2">
+                <a href={ Url } target="_blank">
+                    <img src="/sitio-web.png" alt="" class="w-7 transition ease-in-out hover:scale-125">
+                </a>
+                <a href={ Urlgit } target="_blank">
+                    <img src="/git.png" alt="" class="w-7 transition ease-in-out hover:scale-125">
+                </a>                
+            </div>
+        </div>
+    </div>
+</div>

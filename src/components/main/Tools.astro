@@ -1,0 +1,42 @@
+---
+export interface Props {
+    Titulo: string
+    Content: string
+}
+
+const { Titulo, Content } = Astro.props
+---
+
+<section class="flex flex-col md:flex-row pt-16 md:py-16">
+    <div class="flex-1 grid grid-cols-2">
+        <div class="text-center">
+            <img src="/python.png" alt="" class="w-20 m-auto md:hover:animate-bounce">
+            <p class="mb-16 md:mb-4 text-xs text-zinc-500 opacity-50 italic">Programacion</p>
+        </div>
+        <div class="text-center">
+            <img src="/microsoft-sql-server.png" alt="" class="w-20 m-auto md:hover:animate-bounce">
+            <p class="mb-16 md:mb-4 text-xs text-zinc-500 opacity-50 italic">SQL y NO-SQL</p>
+        </div>
+        <div class="text-center">
+            <img src="/azure.png" alt="" class="w-20 m-auto md:hover:animate-bounce">
+            <p class="md:mb-4 text-xs text-zinc-500 opacity-50 italic">Soluciones cloud</p>
+        </div>
+        <div class="text-center">
+            <img src="kubernetes.png" alt="" class="w-20 m-auto md:hover:animate-bounce">
+            <p class="md:mb-4 text-xs text-zinc-500 opacity-50 italic">Infraestructura</p>
+        </div>
+    </div>
+
+    <div class="flex flex-1 flex-col gap-y-7 
+                py-16 md:py-0 px-7 md:px-0 
+                justify-center md:justify-start items-center md:items-start
+                ">
+        <h2 class="text-4xl font-bold" >
+            { Titulo }
+        </h2>
+        <p class="text-1xl">
+            { Content }
+        </p>
+    </div>
+
+</section>

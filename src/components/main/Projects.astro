@@ -1,0 +1,47 @@
+---
+
+const resp = await fetch("http://localhost:8000/recent_proj?recent=true")
+const projects: any = await resp.json()
+
+import Project from "../shared/Project-cont.astro"
+
+
+export interface Props {
+    Titulo: String;
+    More: String;
+    LinkMore: String;
+
+}
+
+const { Titulo, More, LinkMore } = Astro.props;
+---
+
+<section>
+    <div class="flex text-center md:text-left mb-5 px-5 md:px-0">
+        <h2 class="text-4xl font-bold pt-10">
+            { Titulo }
+        </h2>
+    </div>
+
+
+    <div class="flex flex-col space-y-3">
+        {
+            projects.map( project => (
+                <Project
+                    Titulo = { project.title }
+                    Resumen = { project.resumen }
+                    Image = { project.image }
+                    Url = { project.url }
+                    Urlgit= { project.urlgit }
+                    Tags = { project.tags }
+
+                />
+            ))
+        }
+    </div>
+    <div class="flex justify-center pt-5">
+        <a href={ LinkMore } class="text-[#BB5226] hover:text-[#D7754C] opacity-1 italic ">
+            { More }
+        </a>
+    </div>
+</section>

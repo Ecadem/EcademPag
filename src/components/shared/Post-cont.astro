@@ -1,0 +1,33 @@
+---
+export interface Props {
+    Title: string;
+    Last_update: string;
+    Resumen: string;
+    Image: string;
+    Url: string;
+}
+
+const { Title, Last_update, Resumen, Image, Url } = Astro.props
+---
+
+<a href = { Url } class="px-0 md:px-0 py-0 md:py-0 md:mx-3 
+                        rounded-lg bg-[#320030] md:hover:ease-in 
+                        md:hover:duration-200 md:hover:-translate-y-2 hover:bg-[#8F338B]
+                        gap-4">
+    <div class="">
+        
+            <img src={ Image } alt="" class="rounded-t-lg w-auto">
+        
+        <div class="flex p-5
+                    flex-col items-center text-center
+                    rounded-b-lg">
+            <p class="text-3xl font-bold pb-2">
+                { Title }
+            </p>
+            <p class="pb-1 text-xs text-zinc-500 font-semibold">
+                { Last_update }
+            </p>
+            <p>{ Resumen }</p>
+        </div>
+    </div>
+</a>
