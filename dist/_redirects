@@ -1,0 +1,6 @@
+/                 /.netlify/functions/entry    200
+/about            /.netlify/functions/entry    200
+/blog/metabase    /.netlify/functions/entry    200
+/blog/ds4a        /.netlify/functions/entry    200
+/404              /.netlify/functions/entry    200
+/*                /.netlify/functions/entry    404
