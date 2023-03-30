@@ -1,6 +1,6 @@
 ---
 
-const resp = await fetch("http://localhost:8000/recent_proj?recent=true")
+const resp = await fetch("https://ecademcontent.ecademservices.com/recent_proj?recent=true")
 const projects: any = await resp.json()
 
 import Project from "../shared/Project-cont.astro"

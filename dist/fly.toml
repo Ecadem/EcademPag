@@ -1,0 +1,7 @@
+# fly.toml file generated for ecadempag on 2023-03-30T00:05:05-05:00
+
+app = "ecadempag"
+primary_region = "bog"
+
+[env]
+  PORT = "8080"
