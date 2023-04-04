@@ -3,6 +3,8 @@
 
 # Pagina web, portafolio y blog personal
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5e9eae11-d6dd-4bee-9fbd-30513aeae4c2/deploy-status)](https://app.netlify.com/sites/keen-kashata-6895d6/deploys)
+
 Bienvenido/a a mi página web personal donde encontrarás información sobre mis proyectos y experiencia en programación, inteligencia artificial y análitica. Este proyecto fue desarrollado en el nuevo framework de Astro.
 
 ## Acerca de mi
