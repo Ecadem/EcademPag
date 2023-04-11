@@ -1,26 +1,40 @@
 ---
-const resp = await fetch("https://ecademcontent.ecademservices.com/recent_posts")
-const posts: any = await resp.json()
-import Post from "../shared/Post-cont.astro"
-
+const { Titulo, More, LinkMore } = Astro.props;
 
 export interface Props {
-    Titulo: String;
-    More: String;
-    LinkMore: String;
+    Titulo: string;
+    More: string;
+    LinkMore: string;
 
 }
 
-const { Titulo, More, LinkMore } = Astro.props;
+export interface Post {
+    ID:          string;
+    title:       string;
+    last_update: string;
+    resumen:     string;
+    image:       string;
+    url:         string;
+    blogId:      string;
+}
+
+let URL_: string = "https://ecademcontent.ecademservices.com/recent_posts";
+// let URL_: string = "http://localhost:8000/recent_posts";    
+
+const resp = await fetch(URL_);
+const posts: any = await resp.json();
+import Post from "../shared/Post-cont.astro";
+
+
 ---
 
 <section>
     <div class="flex text-center md:text-left my-3 md:my-5">
         <h2 class="text-4xl font-bold">{ Titulo }</h2>
     </div>
-    <div class="flex justify-between flex-col space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:auto-rows-max ">
+    <div class="flex justify-between flex-col space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:auto-rows-max">
         {
-            posts.map( post => (
+            posts.map( (post: Post) => (
                     <Post
                         Title = { post.title }
                         Last_update = { post.last_update }
@@ -32,7 +46,7 @@ const { Titulo, More, LinkMore } = Astro.props;
         }
     </div>
     <div class="flex justify-center py-5">
-        <a href={ LinkMore } class="text-[#BB5226] hover:text-[#D7754C] opacity-1 italic ">
+        <a href={ LinkMore } class="text-[#BB5226] hover:text-[#D7754C] opacity-1 italic">
             { More }
         </a>
     </div>
