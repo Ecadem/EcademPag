@@ -18,11 +18,11 @@ export interface Post {
     blogId:      string;
 }
 
-let URL_: string = "https://ecademcontent.ecademservices.com/recent_posts";
+let URL_: string = "https://ecademcontent.ecademservices.com/recent_posts?recent=true";
 // let URL_: string = "http://localhost:8000/recent_posts";    
 
 const resp = await fetch(URL_);
-const posts: any = await resp.json();
+const posts: Post[] = await resp.json();
 import Post from "../shared/Post-cont.astro";
 
 

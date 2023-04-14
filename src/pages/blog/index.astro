@@ -1,0 +1,43 @@
+---
+export interface Post {
+    ID:          string;
+    title:       string;
+    last_update: string;
+    resumen:     string;
+    image:       string;
+    url:         string;
+    blogId:      string;
+}
+
+// let URL_: string = "https://ecademcontent.ecademservices.com/recent_posts?recent=false";
+let URL_: string = "http://localhost:8000/recent_posts?recent=false";    
+
+const resp = await fetch(URL_);
+const posts: Post[] = await resp.json();
+
+
+// Main
+import Layout from "../../layouts/Layout.astro";
+
+
+// Components
+import Post from "../../components/shared/Post-cont.astro";
+---
+
+<Layout title="Posts">
+    <section>
+        <div class="flex justify-between flex-col space-y-5 md:space-y-5 md:grid md:grid-cols-3 md:auto-rows-max">
+            {
+                posts.map( (post: Post) => (
+                        <Post
+                            Title = { post.title }
+                            Last_update = { post.last_update }
+                            Resumen = { post.resumen }
+                            Image = { post.image }
+                            Url = { post.url }
+                        />
+                ))
+            }
+        </div>
+    </section>
+</Layout>

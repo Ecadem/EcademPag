@@ -1,17 +1,4 @@
 ---
-export interface Props {
-    Titulo: string;
-    Resumen: string;
-    Image: string;
-    Url: string;
-    Urlgit: string;
-    Tags: Array<{
-        name: string;
-        class: string;
-        style: string;
-    }>;
-}
-
 const { Titulo, Resumen, Image, Url, Urlgit, Tags } = Astro.props
 
 let tags = Tags

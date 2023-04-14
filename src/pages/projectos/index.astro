@@ -1,0 +1,48 @@
+---
+export interface Project_ {
+    Titulo: string;
+    Resumen: string;
+    Image: string;
+    Url: string;
+    Urlgit: string;
+    Tags: Array<{
+        name: string;
+        class: string;
+        style: string;
+    }>;
+}
+
+
+const resp = await fetch("https://ecademcontent.ecademservices.com/recent_proj?recent=false")
+const projects: Project_[] = await resp.json()
+
+
+// Main
+import Layout from "../../layouts/Layout.astro";
+
+
+// Components
+
+import Project from "../../components/shared/Project-cont.astro"
+---
+
+<Layout title="Projectos">
+
+    <section>
+        <div class="flex flex-col space-y-3">
+        {
+            projects.map( project => (
+                <Project
+                    Titulo = { project.title }
+                    Resumen = { project.resumen }
+                    Image = { project.image }
+                    Url = { project.url }
+                    Urlgit= { project.urlgit }
+                    Tags = { project.tags }
+                    
+                    />
+                    ))
+                }
+        </div>
+    </section>  
+</Layout>
