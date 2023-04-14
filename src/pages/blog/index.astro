@@ -9,8 +9,8 @@ export interface Post {
     blogId:      string;
 }
 
-// let URL_: string = "https://ecademcontent.ecademservices.com/recent_posts?recent=false";
-let URL_: string = "http://localhost:8000/recent_posts?recent=false";    
+let URL_: string = "https://ecademcontent.ecademservices.com/recent_posts?recent=false";
+// let URL_: string = "http://localhost:8000/recent_posts?recent=false";    
 
 const resp = await fetch(URL_);
 const posts: Post[] = await resp.json();
