@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Metabase">
+
+    <section class="bg-[#0e010d80]
+                    p-0 md:p-20 gap-0 md:gap-3 
+                    text-left 
+                    space-x-0 md:space-x-10
+                    rounded-md">
+        <div>
+
+
+
+
+            <div class="md:my-5 py-10 md:py-0">
+                <h1 class="text-4xl font-bold text-center">Ecadem.co</h1>
+            </div>
+
+            <!-- 1 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        La página de Ecadem nacio principalmente como un portafolio y medio de difusión de los temas que me apasionan y que me gustaría compartir con otras personas. Sin embargo, mis conocimientos en desarrollo de interfaces de usuarios eran nulos (hoy solo son básicas) y hasta cierto punto me frustraba debido al no poder plasmar mis ideas. Comencé con Wordpress y logré estar satisfecho para aquel entonces pero, con el pasar del tiempo, esa satisfacción fue disminuyendo hasta llegar al punto donde había comenzado. Cuando se vive en el mundo de la analítica, automatización y desarrollo backend hay tantas cosas que se quieren aprender que tiende a ser abrumador, aun así quería hacer algo al respecto, inicié aprendiendo Angular, este framework me ha sido útil para complementar tareas en mi trabajo y en el desarrollo de proyectos personales a pesar de ser una herramienta no tan “sencilla” de usar.
+                    </p>
+                </div>
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/aOhQYX8.png">
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/honowVn.png">
+                </div>
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        Aunque me identifico como un desarrollador ajeno al campo de interfaces de usuario (frontend), encontrar soluciones que se ajusten a mis necesidades ha sido un poco complejo. Encontré un artículo sobre un framework llamado Astro y después de ver algunos videos y tutoriales, decidí arriesgarme y hacer lo mejor que se puede hacer cuando quieres aprender algo: ponerme manos a la obra. Más que una artículo técnico, quiero compartirles como está planteado este proyecto del que estoy tan orgulloso y si bien recibí aportes de internet (como cualquier desarrollador) me jacto de plantearlo desde 0 y también para compartir mi experiencia y punto de vista, claro, esto lo voy hacer lo más simple que me sea posible. 
+                        <br>
+                        <br>
+                        Este proyecto está compuesto de cuatro partes: frontend, estilos, backend, hosting. Antes de continuar es probable que para algunos frontend y estilos están en la misma categoría, pero tengo un motivo para hacer esta distinción. 
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/RRzHyZp.png">
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0 py-5">
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        El frontend fue desarrollado haciendo uso del framework de Astro, mi experiencia con esta herramienta fue increíble, es sencilla de usar e implementa conceptos que hacen muy fluido el desarrollo. Entre todas sus funcionalidades cuenta con las tres que me interesaban; fácil creación de vistas, implementación de rutas sin complicaciones y simpleza a la hora de conectarse con API’s, solo con esos elementos me era suficiente al principio pero apareció otro asunto que me llamó la atención y que no podía decidir tan a la ligera, los estilos. Solo sabía de la existencia de CSS nada más, pero necesitaba algo más sencillo, algo que me facilitara esa tarea de estilizar la página y encontré el framework de Tailwind, la primera motivación para usarlo fue la facilidad para implementarlo con Astro ya que este contempla que lo uses. Tailwind es un framework de CSS que te brinda todos los estilos que necesites haciendo uso de clases, también facilita la manera en que se ajusta la aplicación a distintos dispositivos por lo que ahorra mucho tiempo en el desarrollo.
+                    </p>         
+                </div>
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/Mq5hSic.png">
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0 py-5">
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/hXQvpe6.png">
+                </div>
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        El backend está compuesto de dos elementos, el primero es una base de datos SQL alojado en planetscale, que es una aplicación con una capa gratuita que ofrece 10 GB de almacenamiento, esta base la uso para centralizar los datos que componen los elementos dinámicos de la página como imágenes, autores, post, proyectos, etc. Esto lo hice porque es más sencillo gestionar el contenido ya que solo tendría que actualizar la base de datos y no modificar el código, el segundo elemento del backend es una API desarrollada en python con el framework de FastAPI, este servicio sirve de puente entre la base de datos y el frontend distribuyendo los datos necesarios, por cierto, esta API está libre para el uso de quien la desee usar.
+                    </p>        
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        El hosting está a cargo de Netlify, no conozco mucho esta plataforma, pero Astro permite un despliegue bastante sencillo, algo que me alivia es que Netlify cuenta con una capa gratuita y que soporta la página sin ningún problema y me está ahorrando un par de dólares que estaba invirtiendo en hostings dedicados. 
+                        <br>
+                        <br>
+                        Me gustaría concluir con algunas enseñanzas que me dejó este proyecto, como no conformarse, pero también ser consciente que es necesario dar pasos en vez de saltos, de lo necesario que es estar rodeado de personas que apoyen nuestras iniciativas y estén dispuestos a ver, escuchar y compartir puntos de vista distintos al nuestro en pro de mejorar, aprendí también lo importante que es una buena planeación pero también que no podemos prever todo. Invito a que nos pongamos manos a la obra y sigamos creciendo en lo que nos apasiona. 
+                    </p>
+                </div>
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/giXpWmn.png">
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </section>
+</Layout>   
