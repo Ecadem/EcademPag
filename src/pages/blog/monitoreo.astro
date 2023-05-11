@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Monitoring">
+
+    <section class="bg-[#0e010d80]
+                    p-0 md:p-20 gap-0 md:gap-3 
+                    text-left 
+                    space-x-0 md:space-x-10
+                    rounded-md">
+        <div>
+
+
+
+
+            <div class="md:my-5 py-10 md:py-0">
+                <h1 class="text-4xl font-bold text-center">Cómo monitorizar los servicios de tu portafolio</h1>
+            </div>
+
+            <!-- 1 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        En una ocasión hubo un momento en que un par de proyectos que había realizado dejaron de funcionar por diversas razones así que me di la tarea de buscar una herramienta que me ayudará a monitorear esos servicios. Encontré un par de alternativas como CheckMK o Prometheus que si bien cumplían mis necesidades con creces sentí que ambas soluciones eran algo excesivo para la simpleza de lo que buscaba. Lo que quería era una interfaz que me mostrara las aplicaciones que tenía y si estaban funcionando o no. Era una idea simple que tomó varias aristas interesantes.
+                    </p>
+                </div>
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/bV8ObiW.png">
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/0yKceX4.png">
+                </div>
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        Primero había pensado en un micro servicio que, con cada petición consultará cada aplicación y retorne un arreglo de objetos que tuviesen la información necesaria pero, ese proceso tenía un problema, si cien personas entraban a la aplicación al mismo tiempo Se iba a hacer a cada aplicación cien peticiones distintas, eso se traduce a recursos y los recursos cuestan, entonces, pensé que esa tarea debería ser cada cierto tiempo y tener un histórico en una base de datos, donde tendría disponible la información que necesaria.
+                        <br>
+                        <br>
+                        Con esta solución encontré el qué hacer pero el cómo también me puso a pensar un poco pues por un lado se tenían que hacer las peticiones a cada aplicación con cierta periodicidad y por otro un endpoint que debía consultar la base de datos con cada petición. Hasta este punto había tomado dos decisiones, en primer lugar que todos estos procesos iban a estar integrados dado a que si no fuese así sería más tedioso el mantenimiento del código y en segundo lugar, que debería minimizar el uso de recursos hasta donde me fuese posible y con una lectura a la base de datos por cada petición no se estaba logrando eso.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0 py-5">
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        Con las ideas más claras, la etapa del proceso de carga y distribución de datos quedó de la siguiente manera; con la librería de python <b>APScheduler</b> cree dos procesos en segundo plano que se inicializan haciendo uso del ciclo de vida de <b>FastAPI</b> donde el primero se encarga de hacer las peticiones a cada aplicación Y almacenarlos en la DB y el segundo se encarga de periódicamente traer la información más reciente disponible y almacenarla en un JSON por ultimo, un endpoint que con cada petición consulta el JSON Creado en el paso anterior. De esta forma tenemos un agente que puede monitorizar con periodicidad y distribuir información a demanda. 
+ 
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/rjJcJq7.png">
+                </div>
+            </div>
+
+            <!-- 5 -->
+
+            <div class="flex flex-col md:flex-row px-5 md:px-0">
+                <div class="flex flex-1 items-center justify-center my-6 md:my-0 m-0 md:m-5">
+                    <img class="" src="https://i.imgur.com/7ZikEVC.png">
+                </div>
+                <div class="flex flex-1 items-center justify-center">                            
+                    <p>
+                        Para la parte visual estaba pensando si hacer uso de frameworks que familiares para mi como Angular y Astro o, incursionar por nuevos frameworks como React o Next.js pero despues me parecio hizo más interesante el hacerlo con FastAPI haciendo uso de HTML, Tailwind CSS (que al final no salió tan bien), Javascript y Chat GPT. Si bien con esta decisión la aplicación se volvería monolítica la simpleza de la misma hacía que esto no fuese un problema.
+                        <br>
+                        <br>
+                        El resultado de este ejercicio fue la herramienta de monitoring, herramienta que permite de forma visual y cómoda estar al tanto de cada proyecto que realice con el fin de garantizar una disponibilidad constante de los servicios.
+ 
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </section>
+</Layout>   
