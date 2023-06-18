@@ -15,7 +15,7 @@ Soy un desarrollador apasionado por la tecnología y la programación. Mi experi
 
 La página web fue desarrollada utilizando el nuevo framework de Astro. Las siguientes tecnologías fueron utilizadas en el proyecto:
 
-- Astro
+- Astro.dev
 - HTML
 - CSS
 - JavaScript
